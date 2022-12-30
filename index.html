@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+  <script>
+    $(
+      () => {
+        $('li').draggable({
+          start() {
+            $(this).addClass('dragNow');
+          },
+          stop() {
+            $(this).removeClass('dragNow');
+          }
+        });
+      }
+    );
+  </script>
+  <style>
+    li {
+      border: solid 1px red;
+      width: 100px;
+    }
+    .dragNow {
+      border: solid 1px blue;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>あああ</li>
+    <li>あああ</li>
+    <li>あああ</li>
+    <li>あああ</li>
+  </ul>
+</body>
+</html>
